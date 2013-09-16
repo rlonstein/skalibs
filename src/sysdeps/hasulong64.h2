@@ -1,0 +1,2 @@
+#define HASULONG64
+/* sysdep: +ulong64 */

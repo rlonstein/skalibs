@@ -1,0 +1,3 @@
+
+/* Did I ever tell you that BSD sucks ? */
+#define EPROTO EINVAL

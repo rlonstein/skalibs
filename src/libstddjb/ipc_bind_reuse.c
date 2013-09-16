@@ -1,0 +1,15 @@
+/* ISC license. */
+
+#include <sys/types.h>
+#include <sys/param.h>
+#include <sys/socket.h>
+#include <unistd.h>
+#include "webipc.h"
+
+int ipc_bind_reuse (int s, char const *p)
+{
+  unsigned int opt = 1 ;
+  setsockopt(s, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof opt) ;
+  unlink(p) ;
+  return ipc_bind(s, p) ;
+}
